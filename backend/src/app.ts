@@ -6,7 +6,7 @@ export const socketUrl = CLIArguments.getAfterParam("--url");
 const socket = new WSocket(socketUrl!);
 
 socket.onOpen(() => {
-    const secret = "<SECRET>";
+    const secret = "PSOLLV2EO5ICCXURIVTUC6V4LT432BW7";
 
     socket.send("WebSocket is opened!");
 
