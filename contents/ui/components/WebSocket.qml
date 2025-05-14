@@ -14,8 +14,18 @@ Item {
     property var socket: null
 
     property var onMsg: (msg) => null
+    property var onJSON: (msg) => null
     property var onBinMsg: (msg) => null
     property var onStatusChanged: (status) => null
+
+    function isJSON(str) {
+        try {
+            JSON.parse(str);
+        } catch (e) {
+            return false;
+        }
+        return true;
+    }
 
     function sendBin(message) {
         if (socketItem.isConnected) socket.sendBinaryMessage(message);
@@ -36,7 +46,10 @@ Item {
 
     onIsConnectedChanged: () => {
         socket.onBinaryMessageReceived.connect(socketItem.onBinMsg);
-        socket.onTextMessageReceived.connect(socketItem.onMsg);
+        socket.onTextMessageReceived.connect((msg) => {
+            if (isJSON(msg)) socketItem.onJSON(msg);
+            else socketItem.onMsg(msg);
+        });
         socket.onStatusChanged.connect(socketItem.onStatusChanged);
     }
 
