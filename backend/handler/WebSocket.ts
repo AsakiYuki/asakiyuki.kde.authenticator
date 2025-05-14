@@ -7,9 +7,7 @@ export class WSocket {
     private listenersJSON: ((ev: MessageEvent) => any)[] = [];
 
     private onSocketSendMsg(ev: MessageEvent) {
-        const isJson = isJSON(ev.data);
-
-        for (const listener of isJson ? this.listenersJSON : this.listenersData) listener(ev);
+        for (const listener of isJSON(ev.data) ? this.listenersJSON : this.listenersData) listener(ev);
     }
 
     constructor(socket: WebSocket | string) {
