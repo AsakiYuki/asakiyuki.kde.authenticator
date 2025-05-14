@@ -30,11 +30,13 @@ Item {
             webSocket.onTextMessageReceived.connect(root.push);
             root.socketSend = webSocket.sendTextMessage;
             root.socketStatus = () => webSocket.status;
+
+            root.send("Websocket is connected");
         }
     }
 
     Plasma5Support.DataSource {
         engine: 'executable'
-        connectedSources: [ `cd ${widgetPath}; bun ./backend/app.ts --url "${server.url}";` ]
+        connectedSources: [ `cd ${widgetPath}; bun run start --url "${server.url}";` ]
     }
 }
