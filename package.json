@@ -1,6 +1,7 @@
 {
   "dependencies": {
-    "@types/node": "^22.15.18"
+    "@types/node": "^22.15.18",
+    "otpauth": "^9.4.0"
   },
   "name": "asakiyuki.kde.authenticator",
   "module": "index.ts",
@@ -10,8 +11,9 @@
     "@types/bun": "latest"
   },
   "scripts": {
-    "start": "bun ./backend/app.ts",
-    "dev": "bun --watch ./backend/app.ts"
+    "start": "bun ./backend/index.ts",
+    "dev": "bun --watch ./backend/index.ts",
+    "plasmoid": "plasmoidviewer -a ."
   },
   "peerDependencies": {
     "typescript": "^5"
