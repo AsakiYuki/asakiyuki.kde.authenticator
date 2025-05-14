@@ -18,6 +18,6 @@ export class DataManager {
     }
 
     static writeJson(file: string, data: any) {
-        DataManager.write(file, JSON.stringify(data));
+        DataManager.write(file, JSON.stringify(data, null, 4));
     }
 }

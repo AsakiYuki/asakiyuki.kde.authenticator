@@ -11,6 +11,22 @@ PlasmoidItem {
     Plasmoid.backgroundHints: "NoBackground"
 
     WebSocket {
-        id: socketServer
+        onMsg: (msg) => {
+            console.log(msg);
+        }
+
+        id: socket
+    }
+
+    property int count: 0
+    
+    Timer {
+        interval: 1000;
+        running: true;
+        repeat: true;
+        onTriggered: () => {
+            socket.send("Hello World! " + count++);
+            console.log("Test")
+        }
     }
 }
