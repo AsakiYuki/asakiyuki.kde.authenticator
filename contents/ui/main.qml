@@ -15,7 +15,7 @@ PlasmoidItem {
         id: socket
         
         onMsg: (msg) => {
-            const [cmdName, args] = ev.data.split(":");
+            const [cmdName, args] = msg.split(":");
             const argsArray = args.split(",");
 
             const func = Command.cmd[cmdName];
