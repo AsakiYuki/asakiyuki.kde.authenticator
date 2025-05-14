@@ -1,0 +1,21 @@
+{
+    "KPackageStructure": "Plasma/Applet",
+    "KPlugin": {
+        "Authors": [
+            {
+                "Email": "vantrong2007vn@proton.me",
+                "Name": "Asaki Yuki"
+            }
+        ],
+        "Category": "Utilities",
+        "Description": "Generate and display time-based one-time passwords (TOTP)",
+        "Icon": "dialog-password",
+        "Id": "asakiyuki.kde.authenticator",
+        "License": "MIT",
+        "Name": "Asa's Authenticator"
+    },
+    "X-Plasma-API-Minimum-Version": "6.0",
+    "X-Plasma-Provides": [
+        "org.kde.plasma.authenticator"
+    ]
+}

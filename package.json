@@ -1,0 +1,19 @@
+{
+  "dependencies": {
+    "@types/node": "^22.15.18"
+  },
+  "name": "asakiyuki.kde.authenticator",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "scripts": {
+    "start": "bun ./backend/app.ts",
+    "dev": "bun --watch ./backend/app.ts"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  }
+}
